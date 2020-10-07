@@ -15,7 +15,8 @@ common:
   containers:
     defines: containers
     postgres:
-      image: postgres
+      #image: postgres
+      image: docker.io/postgres
       image-tag: latest
       ports:
         - <- `0.0.0.0:${rpc-port}:5432`
