@@ -39,7 +39,3 @@ common:
 latest:
   defines: runnable
   inherits: ./common
-
-latest-cloud:
-  defines: runnable
-  inherits: ./common
