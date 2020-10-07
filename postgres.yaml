@@ -1,0 +1,45 @@
+namespace: /postgres
+
+common:
+  metadata:
+    defines: metadata
+    name: Postgres
+
+  requirements:
+    defines: requirements
+    CPU: "2 Cores"
+    RAM: 4096
+    GPU: true
+    disk: 512000
+
+  containers:
+    defines: containers
+    postgres:
+      image: postgres
+      image-tag: latest
+      ports:
+        - <- `0.0.0.0:${rpc-port}:5432`
+      environment:
+        - POSTGRES_PASSWORD=password
+      paths:
+        - <- `${volume}:${internal-volume}`
+
+  variables:
+    defines: variables
+    rpc-port:
+      type: int
+      value: 5432
+    volume:
+      type: string
+      value: <- `${moncc-volume-path}/db_data`
+    internal-volume:
+      type: string
+      value: "/var/lib/postgresql/data"
+
+latest:
+  defines: runnable
+  inherits: ./common
+
+latest-cloud:
+  defines: runnable
+  inherits: ./common
