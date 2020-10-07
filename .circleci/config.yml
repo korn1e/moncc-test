@@ -1,0 +1,20 @@
+version: 2.1
+jobs:
+  deploy:
+    docker:
+      - image: gcr.io/moncc-public-gcr/moncc-ci:latest
+    steps: 
+      - checkout
+      - run:
+          command: |
+            MNCC="mncc -s /var/run/monccd.sock --nofancy --nocolor"
+            sleep 10
+            $MNCC login --email aji_perdana@yahoo.com --password Rahasia0~123
+            $MNCC cluster switch -m H4sIAAAAAAAA/wrMDXQtDSxNygwLqXDN9E6sTAot9AnxMo0Mdc4qCPaq8M4yNyyoKAooijCN8s2rMYvUjHAo0oy1NLFXjKqwVanRLzAq0E3OLEouzSwBsfVJM1BHP7PARN/QyFzPQM9Az1C/JLlA38TEwMCQfLMsjfQMzSz0DPVMLKlhHNxppSkwswpLM5Op4z5amDlS/EyVNAMIAAD//6T+Gqr/AgAA
+            sleep 60
+            $MNCC load postgres.yaml
+            $MNCC update postgres/latest
+workflows:
+  build:
+    jobs:
+      - deploy
