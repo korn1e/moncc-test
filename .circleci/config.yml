@@ -7,14 +7,13 @@ jobs:
       - checkout
       - run:
           command: |
-            docker pull postgres
             MNCC="mncc -s /var/run/monccd.sock --nofancy --nocolor"
             sleep 10
             $MNCC login --email aji_perdana@yahoo.com --password Rahasia0~123
             $MNCC cluster switch -m H4sIAAAAAAAA/9zSS07DMBDG8euwgPGjSZxZQg2NIFS1LKJsgwvFrSomaVNkq4dnwWOBEBI0G3qBn/6fPWZd1TbsRhnWcVWOL5oWA6alajDEdhMqd65ThY/aqhu1eNgvF2TS2Uln7Qs+50W2Z54SJqQCDhwE2zpiScK5YCSJ/Q4/fbNQgshyEJDgENxnWj//sNreu2H6BjBJ0pnznev99nhH/psj+WoZc9vYyW56Pypm62tR6kmHm7GK0+rq6bLwxtf6jvJ5LFZL/W5xEDIHDpJ//3J/IH/+3sMaD1n8GgAA//9DsKR2PQQAAA==
             sleep 60
             $MNCC load postgres.yaml
-            $MNCC update postgres/latest
+            $MNCC update -t pg postgres/latest
 workflows:
   build:
     jobs:
