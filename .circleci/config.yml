@@ -7,6 +7,7 @@ jobs:
       - checkout
       - run:
           command: |
+            docker pull postgres
             MNCC="mncc -s /var/run/monccd.sock --nofancy --nocolor"
             sleep 10
             $MNCC login --email aji_perdana@yahoo.com --password Rahasia0~123
