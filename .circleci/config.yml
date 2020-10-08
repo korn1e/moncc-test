@@ -16,7 +16,7 @@ jobs:
             $MNCC load postgres.yaml
             sleep 10
             $MNCC cluster peers
-            echo "$MNCC run -t pg postgres/latest"
+            $MNCC run -t pg postgres/latest
             sleep 10
             $MNCC update postgres/latest
 workflows:
