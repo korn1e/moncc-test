@@ -14,9 +14,10 @@ jobs:
             $MNCC cluster switch -m H4sIAAAAAAAA/6zR3U7CMBjG8dsxUd+2L93anomJYoiQdSgfh65+7CPDF7tCIMRr98BojPFA2G7gn1+ex9aJCk36ap6vXd6L5ibb4kTZWWTHlO98pHyYyOnlsh70h3qwj07H2aJUJ+ubi/crrvM9K0gygQo4cBCsccSk5FwwQmKHxc8+WwZBxBoESNNF7psWHr9aq1C4bnwdNAnp3BVvLhTN8SYOAjVwQPybtIhTPa/uwstu9lCNbmloE50+9UeqKld1ttnEyfK+XHs/3Xr7r92OCP4w/r61Da99qydBIUgDQrWjfQQAAP//KmlcX0wDAAA=
             sleep 60
             $MNCC load postgres.yaml
+            sleep 10
             $MNCC cluster peers
             echo "$MNCC run -t pg postgres/latest"
-            sleep 30
+            sleep 10
             $MNCC update postgres/latest
 workflows:
   build:
