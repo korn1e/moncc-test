@@ -11,7 +11,7 @@ jobs:
             sleep 10
             $MNCC login --email aji_perdana@yahoo.com --password Rahasia0~123
             sleep 10
-            $MNCC cluster switch -m H4sIAAAAAAAA/6zR0UrDMBTG8RfSk5w0tM3lYDixOhpdcfFC6DJX01E57dKJkof3QhQRL1zbF/jx5/t0o6tscy07U5iDXfv5Pq8vY9y9vcblTaFcV943aWui5/kVNQ8B28JkQTNfHw17DHFgjiRDkQAHDsi8JSYl58hIEDsNP/u0lACMU0CQagruO63ffllt7+w0fROYJOjcus72zg9v4oAiBQ4i+jtpU737i8PK9y6tdLmg2W72dMz2L9vbeq2VbGzul3f5aoHLLP/XbgPAH42/bx2TN96KJCQCpAJMxCjuIwAA//8pF8qZTAMAAA==
+            $MNCC cluster switch -m H4sIAAAAAAAA/6zRwUvDMBTH8X9IX/LSR9scB8OJ1dHoiosHoctcTUcl7dKJkj9ePCgiHlzb2zt9+D5+qlFVtrmmThf6YNZ+vs/ryxh3b69xeVNI25X3Tdrq6Hl+5ZqHgG2hs6CYr4+aPYY4MCfcubGd6a3/vNlp4BmzjhiKBDhwQOaNY0Sc43BLCsA4BQSSU3Dfaf32y2p7a6bpm8rkgCIFDiL6m9xU7/7isPK9TStVLtxsN3s6ZvuX7W29VpIak/vlXb5a4DLL//X3APBH4+9ZxuSNtyKCRABJwESM4j4CAAD//z7EpRdMAwAA
             sleep 60
             $MNCC load postgres.yaml
             sleep 10
